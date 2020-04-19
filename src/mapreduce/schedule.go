@@ -43,7 +43,6 @@ func schedule(jobName string, mapFiles []string, nReduce int, phase jobPhase, re
 		go worker(jobName,mapFiles,phase,registerChan,n_other,i, &wg)
 	}
 	wg.Wait()
-
 	// All ntasks tasks have to be scheduled on workers. Once all tasks
 	// have completed successfully, schedule() should return.
 	//
